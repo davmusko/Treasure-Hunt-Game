@@ -6,12 +6,22 @@ import random
 print(f"Running {sys.path[0]}.py\nwith Python {sys.version[:5]}\n")
 
 # Returns a matrix. len(list) == 60 && len(list[i] == 15
-def getNewBoard():
-    board = []
+# Change ASCII design of grid in this function
+def get_grid():
+    grid = []
     for i in range(60):
-        board.append([])
+        grid.append([])
         for j in range(15):
-            board[i].append("X")
-    return board
+            grid[i].append("X")
+    return grid
 
-print(len(getNewBoard()))
+
+# Print grid from getNewBoard() with formatting
+def printBoard(grid):
+    xAxisTens = "    "
+    for i in range(1,6):
+        xAxisTens += (" " * 9) + str(i)
+    print(xAxisTens)
+    print("    " + ("0123456789" * 6))
+
+printBoard(get_grid())
